@@ -24,7 +24,7 @@ ALTER TABLE tb_produtos ADD descricao varchar(255);
 -- mostra a estrutura atual da tabela 'tb_produtos'
 DESC tb_produtos;
 
--- MODIFY muda a estrutura do atributo, já o CHANGE muda o nome do atributo
+-- MODIFY muda a estrutura do atributo, já o CHANGE muda o nome do atributo --
 
 -- através da CHANGE consegue mudar o nome do atributo
 ALTER TABLE tb_produtos CHANGE descricao descricao_produto varchar(500);
