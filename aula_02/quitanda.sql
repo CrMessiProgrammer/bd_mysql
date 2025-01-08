@@ -83,13 +83,13 @@ SELECT nome,
 date_format(data_validade, '%d/%m/%Y') AS Data_Validade
 FROM tb_produtos;
 
--- atualiza a tabela 'tb_produtos' e defini 'preco' com o valor de 9.50, onde o 'id = 2'
-UPDATE tb_produtos SET preco = 9.50 WHERE id = 2;
-
 /*
 	-- desabilita a trava de segurança (NÃO RECOMENDADO usar)
 	SET SQL_SAFE_UPDATES = 0;
 */
+
+-- atualiza a tabela 'tb_produtos' e defini 'preco' com o valor de 9.50, onde o 'id = 2'
+UPDATE tb_produtos SET preco = 9.50 WHERE id = 2;
 
 -- apaga o elemento da tabela 'tb_produtos', onde o 'id = 6'
 DELETE FROM tb_produtos WHERE id = 6;
@@ -97,4 +97,33 @@ DELETE FROM tb_produtos WHERE id = 6;
 /*
 	normalmente nas grandes empresas não se apaga os elementos, apenas desativa a conta
     usando o tipo boolean, para se caso o cliente voltar, os dados já estarem guardados 
+*/
+
+-- ----------------------------------------------------------------------------------------------------- --
+
+/* Bônus */ 
+
+/*
+
+	-- Visualizar a estrutura da tabela
+	DESC tb_produtos;
+
+	-- Esqueceu de definir a chave primária da tabela
+	ALTER TABLE tb_produtos ADD PRIMARY KEY (id);
+
+	-- Modificar o nome de um Atributo da Tabela
+	ALTER TABLE tb_produtos CHANGE nome nomeproduto varchar(255);
+
+	-- Apagar todos os dados da tabela (Não é possível desfazer)
+	DELETE FROM tb_produtos;
+
+	-- Descobrir a Collation do Banco de dados
+	SELECT @@collation_database;
+
+	-- Apagar a tabela
+	DROP TABLE tb_produtos;
+
+	-- Apagar o Banco
+	DROP DATABASE db_quitanda;
+
 */
